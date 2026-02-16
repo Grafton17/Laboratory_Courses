@@ -7,7 +7,7 @@ I have to say, I do not put __ALL__ my code here, but just what would be cumbers
 
 # Scope of laboratory courses
 A short and not exhaustive list of the objectives of the attended laboratory courses:
-- **PLASMA PHYSICS LAB I**: investigate the formation of travelling linear waves in a simulated plasma system;
+- __PLASMA PHYSICS LAB I__: investigate the formation of travelling linear waves in a simulated plasma system;
 - **PLASMA PHYSICS LAB I**: analyze the turbulent plasma state inside the [Thorello device](https://fusenet.eu/node/517);
 - **PLASMA PHYSICS LAB II**: learn how to use a LaBr3:Ce detector and analyze properly its data;
 - **PLASMA PHYSICS II**: technically not a laboratory course, but the read of Ex 1.7 and 1.8 of Bellan's "Fundamentals of Plasma Physics" sparked the idea of writing a numerical integrator for the analysis of the Rutherford scattering problem;
