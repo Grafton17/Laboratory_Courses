@@ -11,7 +11,7 @@ A short and not exhaustive list of the objectives of the attended laboratory cou
 - PLASMA PHYSICS LAB I: analyze the turbulent plasma state inside the [Thorello device](https://fusenet.eu/node/517);
 - PLASMA PHYSICS LAB II: learn how to use a LaBr3:Ce detector and analyze properly its data;
 - PLASMA PHYSICS II: technically not a laboratory course, but the read of Ex 1.7 and 1.8 of Bellan's "Fundamentals of Plasma Physics" sparked the idea of writing a numerical integrator for the analysis of the Rutherford scattering problem;
-- COMPUTATIONAL MATERIALS SCIENCE: learn how to write basic Classical Molecular Dynamics (CMD), Kinetic Monte Carlo (KMC) and Metropolis Monte Carlo (MMC) codes. Use them to investigate the behaviour of LJ 6-12 Ag clusters and bulk lattices, diffusion of Ag atoms atop of the FCC 100 and the FCC 111 surfaces, epitaxial (layer-by-layer and multi-layer) growth on top of them and the equilibrium configurations of adatoms without any deposition happening.
+- COMPUTATIONAL MATERIALS SCIENCE: learn how to write basic Classical Molecular Dynamics (CMD), Kinetic Monte Carlo (KMC) and Metropolis Monte Carlo (MMC) codes.
 
 # Summary
 
