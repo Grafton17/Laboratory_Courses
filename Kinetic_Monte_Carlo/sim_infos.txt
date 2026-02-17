@@ -1,0 +1,159 @@
+#--------------------# OUTPUT FORMAT in 'main.py' #--------------------#
+
+The folder storing the entirety of the simulation is called using a time convention. Example: '01_Jan31_10_35'
+
+'01': the month ordinal number (given in 01-12 format, used for file ordering)
+'Jan': the abbreviated name of the month
+'31': day of the month
+'10': hour of the day (given in 00-23 format)
+'35': minute of the hour (given in 00-59 format)
+
+- REGULAR OUTPUT: escape time
+
+The file is called 'Output.txt' and is divided in 5 columns:
+
+0-th: 'sim_time', the length of the simulation until now. Given in seconds
+1-th: the nominal coverage corresponding to 'sim_time', thus it is NOT the actual coverage. Given in MonoLayers (or atoms)
+2-th: 'tau', the extracted escaping time of the selected (thus performed) event. Given in seconds
+3-th: 'theta', the actual coverage. Given in MonoLayers (or atoms)
+4-th: 'rough', the actual surface roughness. Given in MonoLayers (or atoms)
+
+DIFFUSION ONLY:
+5-th: 'K_DEPO', the deposition transition rate
+6-th: 'summed_K_DIFF', the total diffusion transition rate (sum along K_DIFF)
+
+- EVERY NOW and THEN OUTPUT: snap
+
+The files are called 'SNAP0001.xyz'. They are compatipable with Ovito and they list:
+
+0-th row: total number of the atoms = atoms ON the surface + atoms OF the surface
+1-th row: 'theta', the actual coverage. Given in MonoLayers (or atoms)
+2-th and following rows: the position of each atom, given as 'x, y, z', in unit of atomic positions, which is zero-based 
+     (thus '0, 34, 1' means 1st atom on the x axis, 35th on the y and 2nd on the z)
+
+- FINAL OUTPUT: input_parameters
+
+The file is called "Input_parameters.txt" and shows different useful infos:
+
+0-th row: DIFFUSION_BOOL - 'False' = Deposition only and save files in "1st_part", otherwise for 'True'
+1-th row: PHI - Deposition flux expressed in ML/s
+2-th row: TEMP - Temperature at which diffusion happens
+3-th row: SEED - seed used for the number random generator
+
+4-th row: snap_dt - the simulation time passing between two successive snaps (useful for Ovito's visualizations)
+
+NOTE: the first 4 rows are those actually used in "Input_parameters.txt" (in "KMC/Ag epitaxy") when launching simulations
+
+#--------------------# TO DO #--------------------#
+
+1st_part:
+
+- watch how 'tau' values are extracted (so simply verify that they pop out "randomically"?)
+- check (test? statistically test?) that <tau> = 1/k_depo
+- plot the distribution of 'tau' for each sim, maybe even do a plot of all the sims with different seeds and maybe perform a 
+  statistichal check wrt the exponential distribution
+- make animations and snaps of the surface morphology: tower like structures? Multi-layer growth??
+- observe that 'rough' goes as sqrt(actual theta), try to explain it (see slide 8 of 'CMS10'). Maybe do a plot of 
+  'nominal' vs 'actual' coverage, to check that the relation is ~ linear as predicted and do it for several seeds 
+  (both 'rough' and 'theta')
+
+Used seeds:
+312428270054674116253981409899306192348
+144193831631783441215101441714363001219
+264914786653715399394480469990166609730
+332496105924005586042363788695332076602
+42179434837711941487287880505023012954
+
+Obtained mean escape time values in seconds. Expected: 1.39e-03 [s]
+<...> = 1.40e-03 +- 1.40e-03
+<...> = 1.38e-03 +- 1.36e-03
+<...> = 1.39e-03 +- 1.40e-03
+<...> = 1.39e-03 +- 1.39e-03
+<...> = 1.40e-03 +- 1.41e-03
+
+Animations:
+given that a snap was saved every 100 ms and that the animation plays at 10 frames per sec, the shown deposition
+speed is indeed the same of the simulation!
+
+2nd_part:
+
+- make animations and snaps of the surface morphology (change 'dt_snap' accordingly)
+- observe and compare all together 'rough' vs 'theta' (actual coverage)
+- when LbL, make animations and snaps of the initial stages (theta < 0.1 ML and lower the 'dt_snap' value)
+- when LbL, what is the effect of deacreasing PHI? Make appropriate graphs and explain them
+- T value for PHI = 1 ML/s in order to see the same behaviour as when PHI = 0.01 ML/s and T = 650K
+
+Used seeds:
+312428270054674116253981409899306192348   used for all T = 650 K sims
+144193831631783441215101441714363001219   used for new T values
+42179434837711941487287880505023012954    ""   ""   ""   ""
+
+I will assume that a LbL growth is obtained when PHI = 0.1 - 0.01 - 0.0001 [ML/s]
+
+"tau_t_cov" has points that are stacked on top of each other, due to the fact that when diffusion is happening
+the coverage is not changed? Reasonable, as these "stacks" disappear when "tau_t_tim" is plotted.
+
+----- An effect well seen for PHI = 0.1 - 0.01:
+"tau_t_tim" and "tau_t_cov" show apparently periodic structure, linked to the layer deposition?
+Yes, just look at the plots called "tau_oscillations":
+when k_diff is big there is a high chance of a diffusion event extraction (and thus of a small escape time, because the total
+matrix weight is huge, but a single k_diff is smaller than k_depo), on the contrary, when k_diff is small, there's a higher
+chance of a deposition event extraction, which has a bigger escape time. This behaviour is also clearly seen in the evolution
+of the roughness: high roughness means lots of islands, thus more bonded adatoms and therefore less diffusion happening
+
+"tau_d" has a different shape than the exponential one, because K_TOT changes at every simulation step, and thus the
+exponential distribution from which the events are exctracted is not fixed. Intuitively, K_TOT is bigger on average (due to
+diffusion) and thus more extractions of small tau values are expected.
+
+"tau_d" shows that for higher values of PHI, the distribution of tau values is squeezed towards lower values of tau. This is
+reasonable as a higher PHI means lower K_DEPO and thus the extracted times are closer to that of a single diffusione event.
+Indeed, this behaviour is observed in the "tau_oscillation" plot of K_DEPO and K_DIFF.
+
+
+
+
+
+The first 6 simulations are those with a 'dt_snap' value predicted by 100 ms * (0.2 / PHI), the followings are those for which
+I searched the proper T in order to observe the same behaviour of PHI = 0.01 and T = 650 K at PHI = 1.
+
+Seed #1 (from 'Feb06_16_05')
+- predicted 800 K
+- checking value of 850 K   - discarded
+- checking value of 750 K   - discarded
+- predicted 764 K
+
+Seed #2 (from 'Feb08_11_23')
+- reference at T = 650 K
+- predicted 800 K
+- predicted 764 K
+
+Seed #3 (from 'Feb08_11_31')
+- reference at T = 650 K
+- predicted 800 K
+- predicted 764 K
+
+
+
+
+
+The first 6 simulations are those with a 'dt_snap' value predicted by 100 ms * (0.2 / PHI), then we searched the proper T.
+The following sims are made with a different'dt_snap' value and stops at THETA = 2 ML circa, in order to observe differences 
+between the LbL modes:
+
+dt_snap = 0.1 * (100 * 1e-3) * (0.2/PHI)   ---> 10 times more frames than before
+
+The simulations are:
+02_Feb08_12_49_phi_0.0001
+02_Feb08_12_57_phi_0.001
+02_Feb08_12_59_phi_0.01
+02_Feb08_13_00_phi_0.1
+
+The associated animations and pictures are stored in the "Presentation_material/LbL growth" directory.
+
+- 0.0001 One or three static islands that do not change shape and get bigger and round in shape (memo: PBCs are at play!)
+- 0.001 Static islands that do not change shape, they are a few and just get increasingly bigger
+- 0.01 Large number of small static islands that change shape and are not round anymore (because freshly deposited adatoms arrive 
+and are not able to find a proper site along the island to stick in, ie they do not 'thermalize' with the island). The islands
+then fuse together starting from a web alike structure.
+- 0.1 Smallest islands can disappear, while 'bigger' ones are static. They fuse together starting from a network that is slowly
+filled exibiting a multi-layer behaviour
