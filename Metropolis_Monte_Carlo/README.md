@@ -17,21 +17,36 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 
 # Code structure overview
 
-> Folder_with_program  
->> 1st_part  
->>> Generic_output_folder  
->>>> "SNAP0000.xyz"  
->>>> "SNAP0001.xyz"  
->>>> ...  
->>>> "Output.txt"  
->>>> "YOURInput_parameters.txt"  
->> 2nd_part  
->>> Generic_output_folder  
->>>> "Output.txt"  
->>>> "YOURInput_parameters.txt"  
->> _Input_parameters.txt_  
->> _launch_several_sims.py_  
->>  _main.py_  
+> Folder_with_program
+> 
+>> 1st_part
+>>  
+>>> Generic_output_folder
+>>>  
+>>>> "SNAP0000.xyz"
+>>>> 
+>>>> "SNAP0001.xyz"
+>>>> 
+>>>> ...
+>>>> 
+>>>> "Output.txt"
+>>>> 
+>>>> "YOURInput_parameters.txt"
+>>>> 
+>> 2nd_part
+>> 
+>>> Generic_output_folder
+>>> 
+>>>> "Output.txt"
+>>>> 
+>>>> "YOURInput_parameters.txt"
+>>>> 
+>> _Input_parameters.txt_
+>> 
+>> _launch_several_sims.py_
+>> 
+>>  _main.py_
+>> 
 >> _post_processing.py_  
 
 # Managing the ouput of 'main.py'
