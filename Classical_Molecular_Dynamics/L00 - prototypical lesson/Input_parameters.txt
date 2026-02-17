@@ -1,0 +1,7 @@
+MINIMIZED_fcc111a336+1.txt
+1 1 0
+1300
+33282739
+True
+2
+point5_1300K_2fs_300ps
