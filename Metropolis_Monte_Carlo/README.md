@@ -6,7 +6,7 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 
 - __post_processing.py__: analyze data and plot some graphs.
 
-- __1st_part__ and __2nd_part__ folders, they were used in order to keep separated two different MMC exercises. If you want to get rid of them, just change the behaviour of 'red_input()' in the 'main.py' file.
+- __1st_part__ and __2nd_part__ folders, they were used in order to keep separated two different MMC exercises. If you want to get rid of them, just change the behaviour of 'read_input()' in the 'main.py' file.
 
 - __Input_parameters.txt__: essential values to be passed for the simulation to work as defined by the user, otherwise the code itself will set the following values:
      - _**TEMP_BOOL**_ = False
@@ -67,7 +67,7 @@ The file is called _**Output.txt**_ and is divided in 3 columns:
 - 2-th: _**is_accepted**_, 1 == the trial move was accepted, 0 == the trial move was rejected
 
 ## __EVERY NOW and THEN OUTPUT__ 
-(removed if TEMP_BOOl == True)
+(removed if TEMP_BOOL == True)
 
 The files are called _**SNAP0001.xyz**_. They are compatipable with Ovito and they list:
 
