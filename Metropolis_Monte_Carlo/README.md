@@ -34,7 +34,7 @@ Folder_with_program
 	       |________ _main.py_
 	       |________ _post_processing.py_
 
-# Managing the ouput of 'main.py'
+## Managing the ouput of 'main.py'
 
 The name of the output folder is something like "20_0_60_1", meaning:
 
@@ -43,7 +43,7 @@ The name of the output folder is something like "20_0_60_1", meaning:
 - the lattice size is equal to 60 atoms
 - the used seed is the number 1
 
-- __REGULAR OUTPUT__: escape time
+__REGULAR OUTPUT__: escape time
 
 The file is called 'Output.txt' and is divided in 3 columns:
 
@@ -51,7 +51,7 @@ The file is called 'Output.txt' and is divided in 3 columns:
 1-th: 'old_Energy', the energy of the i-th configuration, whether it was accepted or rejected
 2-th: 'is_accepted', 1 == the trial move was accepted, 0 == the trial move was rejected
 
-- EVERY NOW and THEN OUTPUT (removed if TEMP_BOOl == True): snap
+__EVERY NOW and THEN OUTPUT__ (removed if TEMP_BOOl == True): snap
 
 The files are called 'SNAP0001.xyz'. They are compatipable with Ovito and they list:
 
