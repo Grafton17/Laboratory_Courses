@@ -17,22 +17,22 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 
 # Code structure overview
 
-| Folder_with_program |
-	       |________ 1st_part
-			                |________ Generic_output_folder
-					                              |________________ "SNAP0000.xyz"
-					                              |________________ "SNAP0001.xyz"
-					                              |________________ ...
-					                              |________________ "Output.txt"
-					                              |________________ "YOURInput_parameters.txt"
-	       |________ 2nd_part
-			                |________ Generic_output_folder
-					                              |________________ "Output.txt"
-					                              |________________ "YOURInput_parameters.txt"
-	       |________ _Input_parameters.txt_
-	       |________ _launch_several_sims.py_
-	       |________ _main.py_
-	       |________ _post_processing.py_
+ Folder_with_program  
+ 	       |________ 1st_part  
+ 			                |________ Generic_output_folder  
+ 					                              |________________ "SNAP0000.xyz"  
+ 					                              |________________ "SNAP0001.xyz"  
+ 					                              |________________ ...  
+ 					                              |________________ "Output.txt"  
+ 					                              |________________ "YOURInput_parameters.txt"  
+ 	       |________ 2nd_part  
+ 			                |________ Generic_output_folder  
+ 					                              |________________ "Output.txt"  
+ 					                              |________________ "YOURInput_parameters.txt"  
+ 	       |________ _Input_parameters.txt_  
+ 	       |________ _launch_several_sims.py_  
+ 	       |________ _main.py_  
+ 	       |________ _post_processing.py_  
 
 # Managing the ouput of 'main.py'
 
@@ -43,7 +43,7 @@ The name of the output folder is something like "20_0_60_1", meaning:
 - the lattice size is equal to 60 atoms
 - the used seed is the number 1
 
-## __REGULAR OUTPUT__: escape time
+## __REGULAR OUTPUT__
 
 The file is called 'Output.txt' and is divided in 3 columns:
 
@@ -51,23 +51,24 @@ The file is called 'Output.txt' and is divided in 3 columns:
 1-th: 'old_Energy', the energy of the i-th configuration, whether it was accepted or rejected
 2-th: 'is_accepted', 1 == the trial move was accepted, 0 == the trial move was rejected
 
-## __EVERY NOW and THEN OUTPUT__ (removed if TEMP_BOOl == True): snap
+## __EVERY NOW and THEN OUTPUT__ 
+(removed if TEMP_BOOl == True)
 
 The files are called 'SNAP0001.xyz'. They are compatipable with Ovito and they list:
 
-0-th row: total number of the atoms = atoms ON the surface + atoms OF the surface
-1-th row: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
-2-th and following rows: the position of each atom, given as 'x, y, z', in unit of atomic positions, which is zero-based 
+1. 0-th row: total number of the atoms = atoms ON the surface + atoms OF the surface
+2. 1-th row: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
+3. 2-th and following rows: the position of each atom, given as 'x, y, z', in unit of atomic positions, which is zero-based 
      (thus '0, 34, 1' means 1st atom on the x axis, 35th on the y and 2nd on the z)
 
 __FINAL OUTPUT__: input_parameters
 
 The file is called "YOURinput_parameters.txt" and shows different useful infos:
 
-0-th row: TEMP_BOOL - 'False' = No Metropolis rejection rule and save files in "1st_part", otherwise for 'True'
-1-th row: TEMP - temperature at which the system sits
-2-th row: N_ADATOMS - the number of adatoms on the surface
-3-th row: SEED - seed used for the number random generator
+1. 0-th row: TEMP_BOOL - 'False' = No Metropolis rejection rule and save files in "1st_part", otherwise for 'True'
+2. 1-th row: TEMP - temperature at which the system sits
+3. 2-th row: N_ADATOMS - the number of adatoms on the surface
+4. 3-th row: SEED - seed used for the number random generator
 
 NOTE: these rows are those actually used in "Input_parameters.txt" (in "MMC/Ag_surface_equilibrium") when launching simulations
       Except for the 'output_name'
