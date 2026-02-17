@@ -23,32 +23,52 @@ Everything else will be managed by the program.
 
 The structure is defined as:
 
-Folder_with_program
-	|_____ my_package
-	            |________ __pycache__
-	            |________ "__init__.py"
-	            |________ "my_module.py"
-	            |________ "PostProcessing.py"
-	            |________ "MinimizeConfiguration.py"
-	            |________ "README.txt"
-	|_____ Working_folder
-	            |________ L10_22Ottobre
-	            |________ L11_28Ottobre
-	            |________      ...
-			            |________ Generic_output_folder
-							|________________ "Conf001.xyz"
-							|________________ "Conf002.xyz"
-							|________________ ...
-							|________________ "Output.txt"
-							|________________ "YOURInput_parameters.txt"
-			            |________ "Input_parameters.txt"
-			            |________ "launch_several_sims.py"
-			            |________ "main.py"
-	|_____ Useful_files_for_simulations
-	            |________ "fcc100a108.txt"
-	            |________ "fcc100a256.txt"
-	            |________ ...
-	            |________ "MINIMIZED_fcc111a336+1.txt"
+> Folder_with_program
+>
+>> my_package
+>> 
+>>> __pycache__
+>>> 
+>>> "__init__.py"
+>>> 
+>>> "my_module.py"
+>>> 
+>>> "PostProcessing.py"
+>>> 
+>>> "MinimizeConfiguration.py"
+>>> 
+>>> "README.txt"
+>>
+>> L00 - prototypical lesson
+>> 
+>>> Generic_output_folder
+>>> 
+>>>> "Conf001.xyz"
+>>>> 
+>>>> "Conf002.xyz"
+>>>> 
+>>>> ...
+>>>> "Output.txt"
+>>>> 
+>>>> "YOURInput_parameters.txt"
+>>>
+>>> "Input_parameters.txt"
+>>> 
+>>> "launch_several_sims.py"
+>>> 
+>>> "main.py"
+>>> 
+>> Useful_files_for_simulations
+>> 
+>>> "fcc100a108.txt"
+>>> 
+>>> "fcc100a256.txt"
+>>> 
+>>> ...
+>>> 
+>>> "MINIMIZED_fcc111a336+1.txt"
+>>
+>
 
 *** The code was developed during course lectures, thus I had several lessons to deal with. 
     This useless nesting can be avoided and the 'lecture step' can be removed. Doing so, you
