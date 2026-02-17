@@ -19,7 +19,7 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 
 > Folder_with_program
 > 
->> 1st_part
+>> __1st_part__
 >>  
 >>> Generic_output_folder
 >>>  
@@ -33,7 +33,7 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 >>>> 
 >>>> "YOURInput_parameters.txt"
 >>>> 
->> 2nd_part
+>> __2nd_part__
 >> 
 >>> Generic_output_folder
 >>> 
@@ -41,13 +41,13 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 >>>> 
 >>>> "YOURInput_parameters.txt"
 >>>> 
->> _Input_parameters.txt_
+>> __Input_parameters.txt__
 >> 
->> _launch_several_sims.py_
+>> __launch_several_sims.py__
 >> 
->>  _main.py_
+>>  __main.py__
 >> 
->> _post_processing.py_  
+>> __post_processing.py__  
 
 # Managing the ouput of 'main.py'
 
