@@ -23,13 +23,13 @@ Everything else will be managed by the program.
 
 The structure is defined as:
 
-> Folder_with_program
+> **Folder_with_program**
 >
->> my_package
+>> **my_package**
 >> 
->>> __pycache__
+>>> \_\_pycache\_\_
 >>> 
->>> "__init__.py"
+>>> "\_\_init\_\_.py"
 >>> 
 >>> "my_module.py"
 >>> 
@@ -39,7 +39,7 @@ The structure is defined as:
 >>> 
 >>> "README.txt"
 >>
->> L00 - prototypical lesson
+>> **L00 - prototypical lesson**
 >> 
 >>> Generic_output_folder
 >>> 
@@ -48,6 +48,7 @@ The structure is defined as:
 >>>> "Conf002.xyz"
 >>>> 
 >>>> ...
+>>>> 
 >>>> "Output.txt"
 >>>> 
 >>>> "YOURInput_parameters.txt"
@@ -58,7 +59,7 @@ The structure is defined as:
 >>> 
 >>> "main.py"
 >>> 
->> Useful_files_for_simulations
+>> **Useful_files_for_simulations**
 >> 
 >>> "fcc100a108.txt"
 >>> 
