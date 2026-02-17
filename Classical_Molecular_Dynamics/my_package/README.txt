@@ -35,19 +35,16 @@ Folder_with_program
 	            |________ "PostProcessing.py"
 	            |________ "MinimizeConfiguration.py"
 	            |________ "README.txt"
-	|_____ Working_folder
-	            |________ L10_22Ottobre
-	            |________ L11_28Ottobre
-	            |________      ...
-			            |________ Generic_output_folder
-							|________________ "Conf001.xyz"
-							|________________ "Conf002.xyz"
-							|________________ ...
-							|________________ "Output.txt"
-							|________________ "YOURInput_parameters.txt"
-			            |________ "Input_parameters.txt"
-			            |________ "launch_several_sims.py"
-			            |________ "main.py"
+	|_____ L00 - prototypical lesson
+			          |________ Generic_output_folder
+					  					|________ "Conf001.xyz"
+					 					|________ "Conf002.xyz"
+					  					|________ ...
+					  					|________ "Output.txt"
+					  					|________ "YOURInput_parameters.txt"
+			          |________ "Input_parameters.txt"
+			          |________ "launch_several_sims.py"
+			    	  |________ "main.py"
 	|_____ Useful_files_for_simulations
 	            |________ "fcc100a108.txt"
 	            |________ "fcc100a256.txt"
@@ -76,4 +73,5 @@ fcc100a256.txt
 16324478
 True
 2
+
 Generic_output_folder
