@@ -72,7 +72,7 @@ The structure is defined as:
 
 *** The code was developed during course lectures, thus I had several lessons to deal with. 
     This useless nesting can be avoided and the 'lecture step' (the _**L00 - ...**_) can be removed. Indeed, previously, _**read_input**_, used _**os.listdir()**_ to find the last created directory in order to decide where to direct the output. 
-    Now I just set **WORKING_DIR** manually in _**read_input**_; in an ideal scenario you could just get rid of **WORKING_DIR** and use the current working directory instead (that is _**L00 - prototypical lesson**_).
+    Now I just set **WORKING_DIR** manually in _**read_input**_; in an ideal scenario you could just get rid of **WORKING_DIR** and use the current working directory instead (that is _**Generic_output_folder**_).
 
 # INPUT file structure
 
@@ -88,10 +88,16 @@ The "Input_parameters.txt" file MUST list:
 
 An example is the following list:
 
-fcc100a256.txt //
-1 1 0 //
-20 // 
-16324478 //
-True //
-2 //
-Generic_output_folder //
+fcc100a256.txt
+
+1 1 0
+
+20
+
+16324478
+
+True
+
+2
+
+Generic_output_folder
