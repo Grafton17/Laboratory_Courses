@@ -1,0 +1,67 @@
+The name of the output folder is something like "20_0_60_1", meaning:
+
+- 20 adatoms are used
+- temperature of 0 K
+- the lattice size is equal to 60 atoms
+- the used seed is the number 1
+
+- REGULAR OUTPUT: escape time
+
+The file is called 'Output.txt' and is divided in 3 columns:
+
+0-th: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
+1-th: 'old_Energy', the energy of the i-th configuration, whether it was accepted or rejected
+2-th: 'is_accepted', 1 == the trial move was accepted, 0 == the trial move was rejected
+
+- EVERY NOW and THEN OUTPUT: snap
+
+The files are called 'SNAP0001.xyz'. They are compatipable with Ovito and they list:
+
+0-th row: total number of the atoms = atoms ON the surface + atoms OF the surface
+1-th row: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
+2-th and following rows: the position of each atom, given as 'x, y, z', in unit of atomic positions, which is zero-based 
+     (thus '0, 34, 1' means 1st atom on the x axis, 35th on the y and 2nd on the z)
+
+- FINAL OUTPUT: input_parameters
+
+The file is called "YOURinput_parameters.txt" and shows different useful infos:
+
+0-th row: TEMP_BOOL - 'False' = No Metropolis rejection rule and save files in "1st_part", otherwise for 'True'
+1-th row: TEMP - temperature at which the system sits
+2-th row: N_ADATOMS - the number of adatoms on the surface
+3-th row: SEED - seed used for the number random generator
+
+NOTE: these rows are those actually used in "Input_parameters.txt" (in "MMC/Ag_surface_equilibrium") when launching simulations
+      Except for the 'output_name'
+
+Used seeds:
+312428270054674116253981409899306192348
+144193831631783441215101441714363001219
+264914786653715399394480469990166609730
+332496105924005586042363788695332076602
+42179434837711941487287880505023012954
+
+#--------------------# TO DO #--------------------#
+
+1st_part:
+
+These sims were done with 5e6 steps, then I switched back to 1e6 because it was pointless:
+"2_0_60_1"
+"3_0_60_1"
+"4_0_60_1"
+"5_0_60_1"
+"6_0_60_1"
+
+Seed1:
+N = 18 is metastable, it forms one 3x2 and one 3x4 clusters
+N = 16 is metastable for the majority of the MC loops, it clusterize in a 4x4 only in the end
+
+Seed2:
+N = 18 is not metastable anymore, it forms a 6x3 cluster
+N = 16 clusterize faster and it is discarded during the average computation
+
+2nd_part:
+
+The sims are done with 3e6 steps
+
+I o not save snaps for memory and speed reasons. And print the sim status every 50e4 and not every 5e3 steps.
