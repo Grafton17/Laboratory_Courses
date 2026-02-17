@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/15746675/how-to-write-a-python-module-packag
 
 The code is intended to work only with Silver atoms interacting via the Lennard-Jones potential. In a future, and improbable, development, the functions _**LJ_6_12_energy**_, _**LJPOLY_energy**_ and similar SHOULD BE replaced with classes like _**Interaction_potential**_ and the relative methods, like _**Compute_energy**_ or even _**Compute_force**_. The obtained structure should then be more suitable for different potential, and even different atoms if a class _**My_simulation**_ is added.
 
-In short, a structure similar to the **zpic** code must be envisioned.
+In short, a structure similar to the [**zpic**](https://zpic-plasma.github.io/) code must be envisioned.
 
 ## NOTE: launching several sims automatically
 you can launch your simulations all at once using the 'launch_several_sims.py' script. It MUST be launched from the Anaconda Powershell Prompt, otherwise, inside the Spyder IDE, the std.output is not redirected toward the IPython console. If you want to use the Spyder IDE, you should activate the temporary status.txt file in 'main.py'.
