@@ -23,52 +23,51 @@ Everything else will be managed by the program.
 
 The structure is defined as:
 
-> **Folder_with_program**
+**Folder_with_program**
+
+> **my_package**
+> 
+>> \_\_pycache\_\_
+>> 
+>> "\_\_init\_\_.py"
+>> 
+>> "my_module.py"
+>> 
+>> "PostProcessing.py"
+>> 
+>> "MinimizeConfiguration.py"
+>> 
+>> "README.txt"
 >
->> **my_package**
+> **L00 - prototypical lesson**
+> 
+>> Generic_output_folder
 >> 
->>> \_\_pycache\_\_
+>>> "Conf001.xyz"
 >>> 
->>> "\_\_init\_\_.py"
->>> 
->>> "my_module.py"
->>> 
->>> "PostProcessing.py"
->>> 
->>> "MinimizeConfiguration.py"
->>> 
->>> "README.txt"
->>
->> **L00 - prototypical lesson**
->> 
->>> Generic_output_folder
->>> 
->>>> "Conf001.xyz"
->>>> 
->>>> "Conf002.xyz"
->>>> 
->>>> ...
->>>> 
->>>> "Output.txt"
->>>> 
->>>> "YOURInput_parameters.txt"
->>>
->>> "Input_parameters.txt"
->>> 
->>> "launch_several_sims.py"
->>> 
->>> "main.py"
->>> 
->> **Useful_files_for_simulations**
->> 
->>> "fcc100a108.txt"
->>> 
->>> "fcc100a256.txt"
+>>> "Conf002.xyz"
 >>> 
 >>> ...
 >>> 
->>> "MINIMIZED_fcc111a336+1.txt"
+>>> "Output.txt"
+>>> 
+>>> "YOURInput_parameters.txt"
 >>
+>> "Input_parameters.txt"
+>> 
+>> "launch_several_sims.py"
+>> 
+>> "main.py"
+>> 
+> **Useful_files_for_simulations**
+> 
+>> "fcc100a108.txt"
+>> 
+>> "fcc100a256.txt"
+>> 
+>> ...
+>> 
+>> "MINIMIZED_fcc111a336+1.txt"
 >
 
 *** The code was developed during course lectures, thus I had several lessons to deal with. 
