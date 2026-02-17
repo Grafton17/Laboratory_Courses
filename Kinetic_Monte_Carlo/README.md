@@ -74,7 +74,7 @@ The file is called _**Output.txt**_ and is divided in 5 columns:
 
 For simulations in the '2nd_part' only (that is diffusion only) the code outputs two more columns:
 - 5-th: _**K_DEPO**_, the deposition transition rate
-- 6-th: _**summed_K_DIFF**_, the total diffusion transition rate (sum along K_DIFF)
+- 6-th: _**summed_K_DIFF**_, the total diffusion transition rate (summed along K_DIFF)
 
 ## __EVERY NOW and THEN OUTPUT__ 
 
