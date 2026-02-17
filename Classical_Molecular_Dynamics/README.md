@@ -41,7 +41,7 @@ The structure is defined as:
 >
 > **L00 - prototypical lesson**
 > 
->> Generic_output_folder
+>> **Generic_output_folder**
 >> 
 >>> "Conf001.xyz"
 >>> 
