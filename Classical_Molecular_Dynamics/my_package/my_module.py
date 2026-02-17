@@ -159,7 +159,7 @@ def read_input (input_file = "Input_parameters.txt"):
     # dirs.sort()
     # WORKING_DIR = dirs[-1]   # Always refer to the last lesson in the "Working_folder"
     
-    WORKING_DIR = "L20-22_03Dicembre_exercise"
+    WORKING_DIR = "L00 - prototypical lesson"
     
     # ----- Read the input parameters from the 'input_file' ------
     
@@ -669,4 +669,5 @@ def extract_AdatomTraj (coords_folder: str = "point4_1700K_PBC") -> str:
     new_file = coords_path + "/Adatom_traj.txt"
     np.savetxt(new_file, traj)
     
+
     return new_file
