@@ -60,7 +60,7 @@ The name of the output folder is something like _**20_0_60_1**_, meaning:
 
 ## __REGULAR OUTPUT__
 
-The file is called 'Output.txt' and is divided in 3 columns:
+The file is called _**Output.txt**_ and is divided in 3 columns:
 
 - 0-th: _**i**_, i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
 - 1-th: _**old_Energy**_, the energy of the i-th configuration, whether it was accepted or rejected
