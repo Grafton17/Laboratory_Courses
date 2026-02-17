@@ -77,7 +77,6 @@ For simulations in the '2nd_part' only (that is diffusion only) the code outputs
 - 6-th: _**summed_K_DIFF**_, the total diffusion transition rate (sum along K_DIFF)
 
 ## __EVERY NOW and THEN OUTPUT__ 
-(removed if TEMP_BOOl == True)
 
 The files are called _**SNAP0001.xyz**_. They are compatipable with Ovito and they list:
 
