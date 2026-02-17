@@ -1,0 +1,33 @@
+https://youtu.be/bsU7AFjh4m8?si=xELnub9WoptToEFI
+
+- Functions over Classes
+
+- Context manager insted of manually closing and opening files
+  Read for more: https://book.pythontips.com/en/latest/context_managers.html
+  and also: https://stackoverflow.com/questions/1984325/explaining-pythons-enter-and-exit#:~:text=If%20you%20know,will%20be%20closed.
+
+- Type annotations: in function definition (arguments and return values) and unclear variable definitions 
+  (like "my_list = []" instead of "my_list: list[int] = []")
+  
+- Forgiveness over permission: use the "try" and "except" blocks. Read here for more: 
+  https://docs.python.org/3/tutorial/errors.html
+  https://www.geeksforgeeks.org/python/python-try-except/
+
+Example:
+  "try:
+      ...
+   except FileNotFoundError:
+      print("Specified file not found")"
+  
+  instead of
+  
+  "if os.path.exists("your_path"):
+      ...
+   else:
+      print("Specified file not found")"
+      
+- when you pass the same arguments in several functions, it's time for classes. Use the dataclass from the module "dataclasses"
+
+- global constants (centralized structure) and use paths, specifically import Path class from the module pathlib
+
+- use docstrings. Read here for more: https://peps.python.org/pep-0257/
