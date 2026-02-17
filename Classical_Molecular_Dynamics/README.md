@@ -88,16 +88,10 @@ The "Input_parameters.txt" file MUST list:
 
 An example is the following list:
 
-fcc100a256.txt
-
-1 1 0
-
-20
-
-16324478
-
-True
-
-2
-
-Generic_output_folder
+- fcc100a256.txt
+- 1 1 0
+- 20
+- 16324478
+- True
+- 2
+- Generic_output_folder
