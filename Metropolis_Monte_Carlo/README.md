@@ -9,11 +9,11 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 - __1st_part__ and __2nd_part__ folders, they were used in order to keep separated two different MMC exercises. If you want to get rid of them, just change the behaviour of 'red_input()' in the 'main.py' file.
 
 - __Input_parameters.txt__: essential values to be passed for the simulation to work as defined by the user, otherwise the code itself will set the following values:
-     - TEMP_BOOL = False
-     - TEMP = 100.
-     - N_ADATOMS = 25
-     - SEED = 312428270054674116253981409899306192348
-     - OUTPUT_FOLDER = "1st_part"
+     - _**TEMP_BOOL**_ = False
+     - _**TEMP**_ = 100.
+     - _**N_ADATOMS**_ = 25
+     - _**SEED**_ = 312428270054674116253981409899306192348
+     - _**OUTPUT_FOLDER**_ = "1st_part"
 
 # Code structure overview
 
@@ -51,7 +51,7 @@ The Metropolis Monte Carlo code is split in 3 different independent codes. No pe
 
 # Managing the ouput of 'main.py'
 
-The name of the output folder is something like "20_0_60_1", meaning:
+The name of the output folder is something like _**20_0_60_1**_, meaning:
 
 - 20 adatoms are used
 - temperature of 0 K
@@ -62,28 +62,28 @@ The name of the output folder is something like "20_0_60_1", meaning:
 
 The file is called 'Output.txt' and is divided in 3 columns:
 
-- 0-th: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
-- 1-th: 'old_Energy', the energy of the i-th configuration, whether it was accepted or rejected
-- 2-th: 'is_accepted', 1 == the trial move was accepted, 0 == the trial move was rejected
+- 0-th: _**i**_, i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
+- 1-th: _**old_Energy**_, the energy of the i-th configuration, whether it was accepted or rejected
+- 2-th: _**is_accepted**_, 1 == the trial move was accepted, 0 == the trial move was rejected
 
 ## __EVERY NOW and THEN OUTPUT__ 
 (removed if TEMP_BOOl == True)
 
-The files are called 'SNAP0001.xyz'. They are compatipable with Ovito and they list:
+The files are called _**SNAP0001.xyz**_. They are compatipable with Ovito and they list:
 
 - 0-th row: total number of the atoms = atoms ON the surface + atoms OF the surface
-- 1-th row: 'i', i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
+- 1-th row: _**i**_, i-th step of the MC loop (starts from 1, bc the initialized configuration is stored as 0-th step)
 - 2-th and following rows: the position of each atom, given as 'x, y, z', in unit of atomic positions, which is zero-based 
      (thus '0, 34, 1' means 1st atom on the x axis, 35th on the y and 2nd on the z)
 
-__FINAL OUTPUT__: input_parameters
+## __FINAL OUTPUT__
 
-The file is called "YOURinput_parameters.txt" and shows different useful infos:
+The file is called _**YOURinput_parameters.txt**_ and shows different useful infos:
 
-- 0-th row: TEMP_BOOL - 'False' = No Metropolis rejection rule and save files in "1st_part", otherwise for 'True'
-- 1-th row: TEMP - temperature at which the system sits
-- 2-th row: N_ADATOMS - the number of adatoms on the surface
--  3-th row: SEED - seed used for the number random generator
+- 0-th row: _**TEMP_BOOL**_ - 'False' = No Metropolis rejection rule and save files in "1st_part", otherwise for 'True'
+- 1-th row: _**TEMP**_ - temperature at which the system sits
+- 2-th row: _**N_ADATOMS**_ - the number of adatoms on the surface
+-  3-th row: _**SEED**_ - seed used for the number random generator
 
 NOTE: these rows are those actually used in "Input_parameters.txt" (in "MMC/Ag_surface_equilibrium") when launching simulations
       Except for the 'output_name'
